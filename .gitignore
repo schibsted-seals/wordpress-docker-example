@@ -1,0 +1,5 @@
+.vagrant
+database/data
+logs
+vendor
+wp
