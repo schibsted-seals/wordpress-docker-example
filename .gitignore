@@ -3,3 +3,4 @@ database/data
 logs
 vendor
 wp
+local-config.php
