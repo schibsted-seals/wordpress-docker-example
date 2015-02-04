@@ -1,5 +1,12 @@
 # wordpress-docker-example
 
+### Install with composer
+If you want to use this as project template, run following command
+
+```
+composer create-project schibsted-seals/wordpress-docker-template my_project_folder/
+```
+
 ### Requirements
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [Vagrant](http://www.vagrantup.com/downloads.html)
