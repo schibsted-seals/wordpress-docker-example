@@ -29,7 +29,7 @@
     "extra": {
         "webroot-dir": "wp",
         "webroot-package": "wordpress"
-    }
+    },
     "minimum-stability": "dev",
     "license": "MIT"
 }
