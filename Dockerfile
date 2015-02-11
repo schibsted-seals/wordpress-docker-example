@@ -41,8 +41,19 @@ RUN sed -i "s/;date.timezone =/date.timezone = Europe\/Warsaw/" /etc/php5/apache
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/bin/composer
 
+### WP-Cli
+
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN chmod +x wp-cli.phar
+RUN mv wp-cli.phar /usr/local/bin/wp
+ENV WP_CLI_CONFIG_PATH ./
+
+### MySQL client for wp-cli
+
+RUN apt-get install -y mysql-client
+
 ### RUN
 
 EXPOSE 22 80
 
-CMD supervisord -c /etc/supervisor/conf.d/supervisord.conf
+CMD env | grep _ >> /etc/environment && supervisord -c /etc/supervisor/conf.d/supervisord.conf
